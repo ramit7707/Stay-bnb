@@ -1,0 +1,346 @@
+-- STAYBNB - DATA
+
+SET search_path TO staybnb;
+
+-- ==============================
+-- USERS (30 records)
+-- ==============================
+INSERT INTO Users VALUES
+('USR0000001', '9876543210', 'Aarav Mehta',         'aarav.mehta@gmail.com',       'Pass@1234',   '12 MG Road, Bengaluru, Karnataka',      'AADHR100001'),
+('USR0000002', '9123456780', 'Priya Sharma',        'priya.sharma@yahoo.com',      'Priya@5678',  '45 Connaught Place, New Delhi',         'AADHR100002'),
+('USR0000003', '9988776655', 'Rahul Verma',         'rahul.verma@outlook.com',     'Rahul#999',   '78 Park Street, Kolkata',               'AADHR100003'),
+('USR0000004', '9871234560', 'Sneha Iyer',          'sneha.iyer@gmail.com',        'Sneha@321',   '3 Anna Salai, Chennai',                 'AADHR100004'),
+('USR0000005', '9765432100', 'Vikram Singh',        'vikram.singh@gmail.com',      'Vikram!77',   '10 Patel Nagar, Ahmedabad',             'AADHR100005'),
+('USR0000006', '8899776655', 'Ananya Das',          'ananya.das@gmail.com',        'Ananya@55',   '6 Salt Lake, Kolkata',                  'AADHR100006'),
+('USR0000007', '9871100220', 'Karan Patel',         'karan.patel@rediffmail.com',  'Karan$456',   '22 Navrangpura, Ahmedabad',             'AADHR100007'),
+('USR0000008', '9001234567', 'Meera Nair',          'meera.nair@gmail.com',        'Meera@789',   '5 Fort Kochi, Kochi',                   'AADHR100008'),
+('USR0000009', '9123000456', 'Arjun Reddy',         'arjun.reddy@gmail.com',       'Arjun#123',   '90 Jubilee Hills, Hyderabad',           'AADHR100009'),
+('USR0000010', '9812345670', 'Divya Krishnan',      'divya.krishnan@yahoo.com',    'Divya@999',   '11 T Nagar, Chennai',                   'AADHR100010'),
+('USR0000011', '9876540001', 'Rohan Joshi',         'rohan.joshi@gmail.com',       'Rohan!321',   '55 Koregaon Park, Pune',                'AADHR100011'),
+('USR0000012', '9988001122', 'Kavya Menon',         'kavya.menon@gmail.com',       'Kavya@234',   '8 Calicut Road, Kozhikode',             'AADHR100012'),
+('USR0000013', '9123456001', 'Siddharth Rao',       'sidd.rao@hotmail.com',        'Sidd#678',    '33 Indiranagar, Bengaluru',             'AADHR100013'),
+('USR0000014', '9871009870', 'Aishwarya Gupta',     'aish.gupta@gmail.com',        'Aish@012',    '20 Civil Lines, Jaipur',                'AADHR100014'),
+('USR0000015', '9765001239', 'Nikhil Bose',         'nikhil.bose@gmail.com',       'Nik@Pass9',   '14 New Alipore, Kolkata',               'AADHR100015'),
+('USR0000016', '9876001234', 'Pooja Tiwari',        'pooja.tiwari@gmail.com',      'Pooja#567',   '7 Hazratganj, Lucknow, UP',             'AADHR100016'),
+('USR0000017', '9654321870', 'Amit Kulkarni',       'amit.kulkarni@gmail.com',     'Amit@890',    '19 FC Road, Pune, Maharashtra',         'AADHR100017'),
+('USR0000018', '9001122334', 'Riya Desai',          'riya.desai@yahoo.com',        'Riya!234',    '2 Satellite Road, Ahmedabad',           'AADHR100018'),
+('USR0000019', '9812001234', 'Suresh Nambiar',      'suresh.nambiar@gmail.com',    'Sur#Pass1',   '17 Thrissur Road, Kochi',               'AADHR100019'),
+('USR0000020', '9988123400', 'Lakshmi Rao',         'lakshmi.rao@gmail.com',       'Lak@9900',    '44 Banjara Hills, Hyderabad',           'AADHR100020'),
+('USR0000021', '9123987600', 'Dev Kapoor',          'dev.kapoor@outlook.com',      'Dev@Cap21',   '8 Sector 17, Chandigarh',               'AADHR100021'),
+('USR0000022', '9765123450', 'Shruti Pandey',       'shruti.pandey@gmail.com',     'Shr@Pan22',   '3 Lanka, Varanasi, UP',                 'AADHR100022'),
+('USR0000023', '9871230010', 'Harish Bhat',         'harish.bhat@rediffmail.com',  'Har#Bht23',   '21 Malleswaram, Bengaluru',             'AADHR100023'),
+('USR0000024', '9001234001', 'Tanvi Shah',          'tanvi.shah@gmail.com',        'Tanvi@124',   '9 C G Road, Ahmedabad',                 'AADHR100024'),
+('USR0000025', '9812000056', 'Manish Tripathi',     'manish.tri@gmail.com',        'Mani!Trip5',  '6 Gomti Nagar, Lucknow',                'AADHR100025'),
+('USR0000026', '9988560011', 'Nandita Ghosh',       'nandita.ghosh@gmail.com',     'Nan@Gho26',   '30 Ballygunge, Kolkata',                'AADHR100026'),
+('USR0000027', '9123001100', 'Vivek Menon',         'vivek.menon@yahoo.com',       'Viv@Men27',   '12 Viman Nagar, Pune',                  'AADHR100027'),
+('USR0000028', '9871561230', 'Isha Saxena',         'isha.saxena@gmail.com',       'Isha#Sax28',  '5 Rajpur Road, Dehradun',               'AADHR100028'),
+('USR0000029', '9654001239', 'Rajesh Pillai',       'rajesh.pillai@gmail.com',     'Raj@Pil29',   '77 Kowdiar, Thiruvananthapuram',        'AADHR100029'),
+('USR0000030', '9001560012', 'Geeta Acharya',       'geeta.acharya@outlook.com',   'Geet@Ach30',  '18 Ashok Nagar, Bhopal',               'AADHR100030');
+
+-- ==============================
+-- PREFERENCES (30 records)
+-- ==============================
+INSERT INTO Preferences(User_ID, Pref_Amenities, Pref_Property_Type, Pref_Location) VALUES
+('USR0000001', 'WiFi, Pool',           'Villa',        'Goa'),
+('USR0000002', 'Kitchen, Parking',     'Apartment',    'Mumbai'),
+('USR0000003', 'WiFi, AC',             'Cottage',      'Manali'),
+('USR0000004', 'Pool, Gym',            'Resort',       'Ooty'),
+('USR0000005', 'WiFi, Kitchen',        'Apartment',    'Bengaluru'),
+('USR0000006', 'AC, Parking',          'Flat',         'Kolkata'),
+('USR0000007', 'Pool, BBQ',            'Villa',        'Goa'),
+('USR0000008', 'WiFi, Washer',         'Apartment',    'Kochi'),
+('USR0000009', 'Gym, Pool',            'Penthouse',    'Hyderabad'),
+('USR0000010', 'Kitchen, WiFi',        'Cottage',      'Coorg'),
+('USR0000011', 'AC, WiFi',             'Apartment',    'Pune'),
+('USR0000012', 'Pool, Kitchen',        'Villa',        'Goa'),
+('USR0000013', 'WiFi, Parking',        'Flat',         'Bengaluru'),
+('USR0000014', 'AC, Kitchen',          'Haveli',       'Jaipur'),
+('USR0000015', 'WiFi, Gym',            'Apartment',    'Kolkata'),
+('USR0000016', 'AC, WiFi',             'Cottage',      'Manali'),
+('USR0000017', 'Pool, BBQ',            'Villa',        'Goa'),
+('USR0000018', 'WiFi, Parking',        'Apartment',    'Ahmedabad'),
+('USR0000019', 'Kitchen, WiFi',        'Houseboat',    'Alleppey'),
+('USR0000020', 'Pool, Gym',            'Penthouse',    'Hyderabad'),
+('USR0000021', 'WiFi, AC',             'Apartment',    'Chandigarh'),
+('USR0000022', 'Kitchen, Parking',     'Cottage',      'Varanasi'),
+('USR0000023', 'AC, Pool',             'Villa',        'Goa'),
+('USR0000024', 'WiFi, Kitchen',        'Apartment',    'Ahmedabad'),
+('USR0000025', 'AC, Parking',          'Resort',       'Lucknow'),
+('USR0000026', 'WiFi, Pool',           'Flat',         'Kolkata'),
+('USR0000027', 'Gym, WiFi',            'Apartment',    'Pune'),
+('USR0000028', 'Pool, Kitchen',        'Treehouse',    'Wayanad'),
+('USR0000029', 'WiFi, AC',             'Houseboat',    'Kerala'),
+('USR0000030', 'AC, Kitchen',          'Cottage',      'Bhopal');
+
+-- ==============================
+-- HOST (15 records)
+-- ==============================
+INSERT INTO Host VALUES
+('H001', 'Ramesh Desai',         '9001122334', 'ramesh.desai@gmail.com',        4.85, 1.20, TRUE,  8,  97.50),
+('H002', 'Lakshmi Pillai',       '9112233445', 'lakshmi.pillai@gmail.com',      4.60, 2.50, FALSE, 3,  88.00),
+('H003', 'Suresh Kumar',         '9223344556', 'suresh.kumar@yahoo.com',        4.75, 1.80, TRUE,  5,  95.00),
+('H004', 'Pooja Agarwal',        '9334455667', 'pooja.agarwal@gmail.com',       4.20, 3.00, FALSE, 2,  78.00),
+('H005', 'Manoj Nambiar',        '9445566778', 'manoj.nambiar@outlook.com',     4.90, 0.90, TRUE,  10, 99.00),
+('H006', 'Geeta Rao',            '9556677889', 'geeta.rao@gmail.com',           4.55, 2.10, FALSE, 4,  85.50),
+('H007', 'Deepak Malhotra',      '9667788990', 'deepak.malhotra@gmail.com',     4.80, 1.50, TRUE,  7,  96.00),
+('H008', 'Sunita Jain',          '9778899001', 'sunita.jain@rediffmail.com',    4.30, 2.80, FALSE, 2,  80.00),
+('H009', 'Anand Krishnamurthy',  '9889900112', 'anand.kr@gmail.com',            4.70, 1.60, TRUE,  6,  93.00),
+('H010', 'Fatima Sheikh',        '9990011223', 'fatima.sheikh@gmail.com',       4.65, 2.00, FALSE, 3,  87.00),
+('H011', 'Rajiv Menon',          '9123400001', 'rajiv.menon@gmail.com',         4.88, 1.10, TRUE,  9,  98.00),
+('H012', 'Champa Devi',          '9234500012', 'champa.devi@yahoo.com',         4.40, 2.60, FALSE, 2,  82.00),
+('H013', 'Prabhakaran Nair',     '9345600123', 'prabha.nair@gmail.com',         4.78, 1.40, TRUE,  6,  94.00),
+('H014', 'Nisha Chaudhary',      '9456700234', 'nisha.chaudhary@gmail.com',     4.25, 2.90, FALSE, 1,  76.00),
+('H015', 'Tariq Ansari',         '9567800345', 'tariq.ansari@outlook.com',      4.92, 0.80, TRUE,  11, 99.50);
+
+-- ==============================
+-- HOST LANGUAGES (25 records)
+-- ==============================
+INSERT INTO Host_Languages VALUES
+('H001','Hindi'), ('H001','English'), ('H001','Gujarati'),
+('H002','Tamil'), ('H002','English'),
+('H003','Kannada'), ('H003','English'), ('H003','Hindi'),
+('H004','Hindi'), ('H004','English'),
+('H005','Malayalam'), ('H005','English'),
+('H006','Telugu'), ('H006','Hindi'),
+('H007','Hindi'), ('H007','Punjabi'),
+('H008','Hindi'), ('H008','Marwari'),
+('H009','Kannada'), ('H009','English'),
+('H010','Urdu'), ('H010','Hindi'), ('H010','English'),
+('H011','Malayalam'), ('H011','Tamil');
+
+-- ==============================
+-- PROPERTY CATEGORY (8 records)
+-- ==============================
+INSERT INTO Property_Category VALUES
+(1, 'Villa'),
+(2, 'Apartment'),
+(3, 'Cottage'),
+(4, 'Resort'),
+(5, 'Penthouse'),
+(6, 'Haveli'),
+(7, 'Treehouse'),
+(8, 'Houseboat');
+
+-- ==============================
+-- PROPERTY (25 records)
+-- ==============================
+INSERT INTO Property(Title, Avg_Rating, Description, Category_ID, Price_Per_Night,
+    Availability_Status, No_of_Rooms, No_of_Beds, No_of_Bathrooms, Accommodation_Limit,
+    Check_In_Time, Check_Out_Time, Pet_Permit, Smoking_Permit, Cancellation_Policy,
+    Host_ID, Street_Name, Street_Number, Apartment_Number, City, State, Country, Zipcode)
+VALUES
+('Sunset Beach Villa',          4.90, 'Luxurious beachfront villa with private pool.',          1, 12000.00, 'Available',    4, 6,  3, 10, '14:00','11:00', TRUE,  FALSE, 'Flexible',  'H001', 'Calangute Beach Road',    '12',  NULL,  'Goa',          'Goa',              'India', '403516'),
+('Cozy MG Road Apartment',      4.50, 'Modern apartment near MG Road metro.',                   2,  3500.00, 'Available',    2, 3,  1,  4, '13:00','10:00', FALSE, FALSE, 'Moderate',  'H002', 'MG Road',                 '45A', '302', 'Bengaluru',    'Karnataka',        'India', '560001'),
+('Himalayan Cottage Retreat',   4.80, 'Wooden cottage with mountain views.',                    3,  5000.00, 'Available',    3, 4,  2,  6, '12:00','10:00', TRUE,  FALSE, 'Strict',    'H003', 'Old Manali Road',          '8',   NULL,  'Manali',       'Himachal Pradesh', 'India', '175131'),
+('Heritage Haveli Jaipur',      4.70, 'Restored 19th century haveli with courtyards.',          6,  8000.00, 'Available',    5, 8,  4, 12, '15:00','12:00', FALSE, FALSE, 'Moderate',  'H004', 'Civil Lines',             '20',  NULL,  'Jaipur',       'Rajasthan',        'India', '302006'),
+('Backwater Houseboat',         4.95, 'Traditional Kerala houseboat on serene backwaters.',     8,  9000.00, 'Available',    2, 3,  2,  6, '11:00','09:00', FALSE, FALSE, 'Flexible',  'H005', 'Alappuzha Backwaters',    '3',   NULL,  'Alappuzha',    'Kerala',           'India', '688001'),
+('Koregaon Park Studio',        4.30, 'Chic studio apartment in vibrant Pune locality.',        2,  2200.00, 'Available',    1, 1,  1,  2, '14:00','11:00', FALSE, TRUE,  'Flexible',  'H006', 'Lane 5, Koregaon Park',   '7',   '101', 'Pune',         'Maharashtra',      'India', '411001'),
+('Ooty Misty Hill Resort',      4.60, 'Family resort amidst Nilgiri tea estates.',              4,  7500.00, 'Available',    6,10,  5, 14, '13:00','11:00', TRUE,  FALSE, 'Moderate',  'H007', 'Mysore Road',             '55',  NULL,  'Ooty',         'Tamil Nadu',       'India', '643001'),
+('Goa Party Villa',             4.85, 'Private villa with pool, BBQ and DJ terrace.',           1, 15000.00, 'Available',    5, 8,  4, 16, '14:00','11:00', TRUE,  TRUE,  'Strict',    'H001', 'Baga Beach Road',         '1',   NULL,  'Goa',          'Goa',              'India', '403516'),
+('Juhu Sea-View Penthouse',     4.75, 'Stunning 3BHK penthouse overlooking Juhu Beach.',        5, 18000.00, 'Available',    3, 5,  3,  8, '15:00','12:00', FALSE, FALSE, 'Strict',    'H005', 'Juhu Tara Road',          '99',  'PH1', 'Mumbai',       'Maharashtra',      'India', '400049'),
+('Coorg Coffee Estate Cottage', 4.65, 'Charming cottage on a working coffee plantation.',       3,  4500.00, 'Available',    2, 3,  1,  4, '13:00','10:00', TRUE,  FALSE, 'Flexible',  'H009', 'Madikeri Estate Road',    '6',   NULL,  'Madikeri',     'Karnataka',        'India', '571201'),
+('Indiranagar Loft',            4.40, 'Trendy open-plan loft near 100 Feet Road.',              2,  3000.00, 'Available',    2, 2,  1,  4, '12:00','10:00', FALSE, FALSE, 'Moderate',  'H010', '100 Feet Road',           '33A', '201', 'Bengaluru',    'Karnataka',        'India', '560038'),
+('Munnar Tea Valley View',      4.80, 'Eco-friendly cottage overlooking tea valleys.',           3,  5500.00, 'Available',    2, 3,  2,  6, '13:00','10:00', TRUE,  FALSE, 'Flexible',  'H005', 'Munnar-Thekkady Road',    '14',  NULL,  'Munnar',       'Kerala',           'India', '685612'),
+('Rajasthan Desert Camp',       4.70, 'Luxury tented resort near Thar Desert dunes.',           4,  9500.00, 'Available',    4, 6,  4, 10, '16:00','11:00', FALSE, FALSE, 'Strict',    'H008', 'Sam Sand Dunes Road',     '2',   NULL,  'Jaisalmer',    'Rajasthan',        'India', '345001'),
+('Salt Lake Executive Flat',    4.20, 'Well-connected flat in Kolkata''s IT hub.',               2,  2800.00, 'Available',    3, 4,  2,  6, '12:00','10:00', FALSE, FALSE, 'Flexible',  'H006', 'Sector V, Salt Lake',     '88',  '3B',  'Kolkata',      'West Bengal',      'India', '700091'),
+('Wayanad Treehouse',           4.90, 'Romantic treehouse suite in dense rainforest.',          7,  6500.00, 'Available',    1, 2,  1,  2, '14:00','11:00', FALSE, FALSE, 'Moderate',  'H009', 'Vythiri Forest Road',     '1',   NULL,  'Wayanad',      'Kerala',           'India', '673576'),
+('Pondicherry French Villa',    4.78, 'Colonial-style villa with private garden & pool.',       1, 10500.00, 'Available',    4, 6,  3,  8, '13:00','11:00', TRUE,  FALSE, 'Moderate',  'H011', 'Rue de la Marine',        '4',   NULL,  'Pondicherry',  'Puducherry',       'India', '605001'),
+('Shimla Cedar Cottage',        4.55, 'Quaint cedar cottage with panoramic valley views.',      3,  4800.00, 'Available',    2, 3,  2,  5, '12:00','10:00', TRUE,  FALSE, 'Flexible',  'H012', 'The Ridge',               '11',  NULL,  'Shimla',       'Himachal Pradesh', 'India', '171001'),
+('Udaipur Lake Palace View',    4.88, 'Heritage apartment with direct view of Lake Pichola.',   2, 11000.00, 'Available',    3, 5,  3,  8, '14:00','12:00', FALSE, FALSE, 'Strict',    'H013', 'Lake Palace Road',        '3',   '5A',  'Udaipur',      'Rajasthan',        'India', '313001'),
+('Dharamshala Zen Retreat',     4.72, 'Peaceful hillside cottage near McLeod Ganj.',            3,  3800.00, 'Available',    2, 2,  1,  4, '13:00','10:00', TRUE,  FALSE, 'Flexible',  'H014', 'Jogiwara Road',           '9',   NULL,  'Dharamshala',  'Himachal Pradesh', 'India', '176215'),
+('Kovalam Cliff Villa',         4.82, 'Dramatic villa perched on rocky cliff above the sea.',   1, 13500.00, 'Available',    3, 5,  3,  8, '14:00','11:00', FALSE, FALSE, 'Strict',    'H015', 'Lighthouse Road',         '7',   NULL,  'Kovalam',      'Kerala',           'India', '695527'),
+('Gurgaon Corporate Apartment', 4.35, 'Modern 2BHK in Cyber City, ideal for work stays.',      2,  4200.00, 'Available',    2, 3,  2,  4, '13:00','11:00', FALSE, FALSE, 'Flexible',  'H011', 'DLF Cyber City',          '22',  '604', 'Gurgaon',      'Haryana',          'India', '122002'),
+('Kaziranga Jungle Lodge',      4.68, 'Eco lodge at the edge of Kaziranga National Park.',      4,  8500.00, 'Available',    5, 8,  4, 12, '12:00','10:00', FALSE, FALSE, 'Moderate',  'H013', 'NH37 Kohora',             '1',   NULL,  'Jorhat',       'Assam',            'India', '785109'),
+('Mysore Palace Haveli',        4.76, 'Opulent haveli inspired by Mysore palace architecture.', 6,  9200.00, 'Available',    4, 7,  4, 10, '15:00','12:00', FALSE, FALSE, 'Strict',    'H007', 'Sayyaji Rao Road',        '5',   NULL,  'Mysore',       'Karnataka',        'India', '570001'),
+('Andaman Beach Cottage',       4.91, 'Private cottage steps from Radhanagar beach.',           3,  7800.00, 'Available',    2, 3,  2,  4, '14:00','11:00', FALSE, FALSE, 'Strict',    'H015', 'Havelock Island',         '2',   NULL,  'Havelock',     'Andaman & Nicobar','India', '744211'),
+('Nainital Lake View Retreat',  4.62, 'Charming homestay overlooking Naini Lake.',              3,  3500.00, 'Available',    2, 3,  1,  4, '12:00','10:00', TRUE,  FALSE, 'Flexible',  'H012', 'Mall Road',               '18',  NULL,  'Nainital',     'Uttarakhand',      'India', '263001');
+
+-- ==============================
+-- PROPERTY AMENITIES (55 records)
+-- ==============================
+INSERT INTO Property_Amenities VALUES
+(1,'WiFi'),(1,'Pool'),(1,'Air Conditioning'),(1,'BBQ Grill'),
+(2,'WiFi'),(2,'Air Conditioning'),(2,'Parking'),
+(3,'WiFi'),(3,'Fireplace'),(3,'Mountain View'),
+(4,'WiFi'),(4,'Air Conditioning'),(4,'Heritage Decor'),(4,'Courtyard'),
+(5,'WiFi'),(5,'Sundeck'),(5,'Fishing Rods'),(5,'Kitchen'),
+(6,'WiFi'),(6,'Air Conditioning'),
+(7,'WiFi'),(7,'Pool'),(7,'Restaurant'),(7,'Gym'),
+(8,'WiFi'),(8,'Pool'),(8,'BBQ Grill'),(8,'DJ Terrace'),
+(9,'WiFi'),(9,'Sea View'),(9,'Gym'),(9,'Parking'),
+(10,'WiFi'),(10,'Garden'),(10,'Coffee Plantation View'),
+(11,'WiFi'),(11,'Air Conditioning'),(11,'Parking'),
+(12,'WiFi'),(12,'Tea Valley View'),(12,'Kitchen'),
+(13,'WiFi'),(13,'Desert Safari'),(13,'Bonfire Area'),
+(14,'WiFi'),(14,'Air Conditioning'),(14,'Parking'),
+(15,'WiFi'),(15,'Forest View'),(15,'Hammock'),
+(16,'WiFi'),(16,'Pool'),(16,'Garden'),(16,'Heritage Decor'),
+(17,'WiFi'),(17,'Mountain View'),(17,'Fireplace'),
+(18,'WiFi'),(18,'Lake View'),(18,'Air Conditioning'),
+(19,'WiFi'),(19,'Mountain View'),(19,'Meditation Garden'),
+(20,'WiFi'),(20,'Ocean View'),(20,'Pool');
+
+-- ==============================
+-- RATINGS (30 records)
+-- ==============================
+INSERT INTO Ratings VALUES
+('USR0000001',  1, 4.9, 'Absolutely stunning villa! Worth every penny.'),
+('USR0000002',  2, 4.5, 'Clean, well located and affordable.'),
+('USR0000003',  3, 4.8, 'Perfect mountain getaway, host was very helpful.'),
+('USR0000004',  4, 4.7, 'Beautiful haveli, felt like royalty!'),
+('USR0000005',  5, 5.0, 'The houseboat experience is unmatchable!'),
+('USR0000006',  6, 4.2, 'Decent studio, a bit noisy but okay for the price.'),
+('USR0000007',  7, 4.6, 'Great resort for families, kids loved the pool.'),
+('USR0000008',  8, 4.9, 'Epic party villa, had the best time of our lives.'),
+('USR0000009',  9, 4.8, 'Penthouse views are breathtaking. Highly recommend.'),
+('USR0000010', 10, 4.6, 'Coffee estate was magical. Very peaceful stay.'),
+('USR0000011', 11, 4.3, 'Nice loft, good neighborhood, cozy place.'),
+('USR0000012', 12, 4.8, 'Loved waking up to tea valley views every morning.'),
+('USR0000013', 13, 4.7, 'Desert camp experience was surreal and luxurious.'),
+('USR0000014', 14, 4.1, 'Functional flat, good for work trips.'),
+('USR0000015', 15, 4.9, 'Treehouse was magical! Perfect romantic escape.'),
+('USR0000016', 16, 4.8, 'Pondicherry villa was dreamy. Loved the French vibes.'),
+('USR0000017', 17, 4.5, 'Shimla cottage was cozy and warm. Great views!'),
+('USR0000018', 18, 4.9, 'Waking up to Lake Pichola view was surreal.'),
+('USR0000019', 19, 4.7, 'Peaceful and well-maintained. Loved Dharamshala.'),
+('USR0000020', 20, 4.8, 'Kovalam cliff villa was breathtaking and luxurious.'),
+('USR0000021', 21, 4.3, 'Good apartment for business travel, neat and clean.'),
+('USR0000022', 22, 4.7, 'Kaziranga lodge was incredible! Saw rhinos up close.'),
+('USR0000023', 23, 4.8, 'Mysore haveli was opulent and beautifully decorated.'),
+('USR0000024', 24, 5.0, 'Andaman cottage was paradise. Radhanagar beach 5 stars!'),
+('USR0000025', 25, 4.6, 'Nainital homestay was charming with lovely lake views.'),
+('USR0000026',  1, 4.8, 'Second time here, still as amazing. Highly recommend!'),
+('USR0000027',  8, 4.9, 'Best party villa in Goa. The DJ terrace is awesome!'),
+('USR0000028', 15, 4.9, 'A treehouse stay like no other. Absolutely loved it.'),
+('USR0000029',  5, 4.8, 'Traditional houseboat cruise was serene and memorable.'),
+('USR0000030', 12, 4.7, 'Munnar cottage was tranquil. Loved the tea valley view.');
+
+-- ==============================
+-- WISHLIST (20 records)
+-- ==============================
+INSERT INTO Wishlist VALUES
+('USR0000001',  8),
+('USR0000001',  9),
+('USR0000002',  1),
+('USR0000003',  5),
+('USR0000004', 15),
+('USR0000005',  7),
+('USR0000006',  3),
+('USR0000007', 12),
+('USR0000008',  4),
+('USR0000009', 13),
+('USR0000010', 16),
+('USR0000011', 20),
+('USR0000012', 18),
+('USR0000013', 24),
+('USR0000014',  9),
+('USR0000015', 22),
+('USR0000016', 17),
+('USR0000017',  5),
+('USR0000018', 19),
+('USR0000019', 15);
+
+-- ==============================
+-- BOOKINGS (30 records)
+-- ==============================
+INSERT INTO Bookings VALUES
+('BK00000001','USR0000001',  1, '2024-11-01 10:00:00','2024-12-01','2024-12-07', TRUE),
+('BK00000002','USR0000002',  2, '2024-11-05 11:30:00','2024-12-10','2024-12-15', TRUE),
+('BK00000003','USR0000003',  3, '2024-11-10 09:00:00','2024-12-20','2024-12-27', TRUE),
+('BK00000004','USR0000004',  4, '2024-11-12 14:00:00','2025-01-05','2025-01-10', TRUE),
+('BK00000005','USR0000005',  5, '2024-11-15 08:00:00','2025-01-15','2025-01-18', TRUE),
+('BK00000006','USR0000006',  6, '2024-11-18 16:00:00','2025-01-20','2025-01-22', FALSE),
+('BK00000007','USR0000007',  7, '2024-11-20 12:00:00','2025-02-01','2025-02-07', TRUE),
+('BK00000008','USR0000008',  8, '2024-11-22 10:30:00','2025-02-10','2025-02-14', TRUE),
+('BK00000009','USR0000009',  9, '2024-11-25 13:00:00','2025-02-20','2025-02-25', TRUE),
+('BK00000010','USR0000010', 10, '2024-11-28 09:30:00','2025-03-01','2025-03-05', TRUE),
+('BK00000011','USR0000011', 11, '2024-12-01 11:00:00','2025-03-10','2025-03-13', FALSE),
+('BK00000012','USR0000012', 12, '2024-12-05 15:00:00','2025-03-20','2025-03-25', TRUE),
+('BK00000013','USR0000013', 13, '2024-12-10 08:00:00','2025-04-01','2025-04-06', TRUE),
+('BK00000014','USR0000014', 14, '2024-12-12 10:00:00','2025-04-10','2025-04-13', TRUE),
+('BK00000015','USR0000015', 15, '2024-12-15 14:00:00','2025-04-20','2025-04-23', TRUE),
+('BK00000016','USR0000016', 16, '2024-12-18 09:00:00','2025-04-25','2025-04-30', TRUE),
+('BK00000017','USR0000017', 17, '2024-12-20 12:00:00','2025-05-01','2025-05-05', TRUE),
+('BK00000018','USR0000018', 18, '2024-12-22 10:00:00','2025-05-10','2025-05-14', TRUE),
+('BK00000019','USR0000019', 19, '2024-12-24 11:00:00','2025-05-18','2025-05-21', TRUE),
+('BK00000020','USR0000020', 20, '2024-12-26 14:00:00','2025-05-25','2025-05-30', TRUE),
+('BK00000021','USR0000021', 21, '2024-12-28 09:00:00','2025-06-01','2025-06-05', TRUE),
+('BK00000022','USR0000022', 22, '2024-12-30 10:00:00','2025-06-10','2025-06-15', FALSE),
+('BK00000023','USR0000023', 23, '2025-01-02 11:00:00','2025-06-20','2025-06-25', TRUE),
+('BK00000024','USR0000024', 24, '2025-01-05 12:00:00','2025-07-01','2025-07-07', TRUE),
+('BK00000025','USR0000025', 25, '2025-01-08 09:30:00','2025-07-10','2025-07-13', TRUE),
+('BK00000026','USR0000026',  1, '2025-01-10 10:00:00','2025-07-20','2025-07-26', TRUE),
+('BK00000027','USR0000027',  8, '2025-01-12 13:00:00','2025-08-01','2025-08-05', TRUE),
+('BK00000028','USR0000028', 15, '2025-01-14 15:00:00','2025-08-10','2025-08-13', TRUE),
+('BK00000029','USR0000029',  5, '2025-01-16 08:00:00','2025-08-20','2025-08-23', FALSE),
+('BK00000030','USR0000030', 12, '2025-01-18 11:00:00','2025-09-01','2025-09-06', TRUE);
+
+-- ==============================
+-- BOOKING INVOICE (30 records)
+-- ==============================
+INSERT INTO Booking_Invoice VALUES
+('INV0000001','BK00000001','TXN0000001','Paid',    '2024-11-01',  72000.00),
+('INV0000002','BK00000002','TXN0000002','Paid',    '2024-11-05',  17500.00),
+('INV0000003','BK00000003','TXN0000003','Paid',    '2024-11-10',  35000.00),
+('INV0000004','BK00000004','TXN0000004','Paid',    '2024-11-12',  40000.00),
+('INV0000005','BK00000005','TXN0000005','Paid',    '2024-11-15',  27000.00),
+('INV0000006','BK00000006','TXN0000006','Pending', '2024-11-18',   4400.00),
+('INV0000007','BK00000007','TXN0000007','Paid',    '2024-11-20',  45000.00),
+('INV0000008','BK00000008','TXN0000008','Paid',    '2024-11-22',  60000.00),
+('INV0000009','BK00000009','TXN0000009','Paid',    '2024-11-25',  90000.00),
+('INV0000010','BK00000010','TXN0000010','Paid',    '2024-11-28',  18000.00),
+('INV0000011','BK00000011','TXN0000011','Pending', '2024-12-01',   9000.00),
+('INV0000012','BK00000012','TXN0000012','Paid',    '2024-12-05',  27500.00),
+('INV0000013','BK00000013','TXN0000013','Paid',    '2024-12-10',  47500.00),
+('INV0000014','BK00000014','TXN0000014','Paid',    '2024-12-12',   8400.00),
+('INV0000015','BK00000015','TXN0000015','Paid',    '2024-12-15',  19500.00),
+('INV0000016','BK00000016','TXN0000016','Paid',    '2024-12-18',  52500.00),
+('INV0000017','BK00000017','TXN0000017','Paid',    '2024-12-20',  19200.00),
+('INV0000018','BK00000018','TXN0000018','Paid',    '2024-12-22',  44000.00),
+('INV0000019','BK00000019','TXN0000019','Paid',    '2024-12-24',  11400.00),
+('INV0000020','BK00000020','TXN0000020','Paid',    '2024-12-26',  67500.00),
+('INV0000021','BK00000021','TXN0000021','Paid',    '2024-12-28',  16800.00),
+('INV0000022','BK00000022','TXN0000022','Pending', '2024-12-30',  42500.00),
+('INV0000023','BK00000023','TXN0000023','Paid',    '2025-01-02',  46000.00),
+('INV0000024','BK00000024','TXN0000024','Paid',    '2025-01-05',  46800.00),
+('INV0000025','BK00000025','TXN0000025','Paid',    '2025-01-08',  10500.00),
+('INV0000026','BK00000026','TXN0000026','Paid',    '2025-01-10',  72000.00),
+('INV0000027','BK00000027','TXN0000027','Paid',    '2025-01-12',  60000.00),
+('INV0000028','BK00000028','TXN0000028','Paid',    '2025-01-14',  19500.00),
+('INV0000029','BK00000029','TXN0000029','Pending', '2025-01-16',  27000.00),
+('INV0000030','BK00000030','TXN0000030','Paid',    '2025-01-18',  27500.00);
+
+-- ==============================
+-- BOOKING CANCELLATION (10 records)
+-- ==============================
+INSERT INTO Booking_Cancellation(Booking_ID, Refund_Amount, Cancellation_Date, Cancellation_Reason, Refund_Status) VALUES
+('BK00000006',  3080.00, '2024-11-20 10:00:00', 'Change of travel plans',            'Refunded'),
+('BK00000011',  6300.00, '2024-12-05 09:00:00', 'Family emergency',                  'Refunded'),
+('BK00000003', 17500.00, '2024-11-15 14:00:00', 'Host cancelled due to repairs',     'Refunded'),
+('BK00000007',     0.00, '2024-11-25 11:00:00', 'No reason provided',                'Not Eligible'),
+('BK00000009', 45000.00, '2024-12-01 08:00:00', 'Visa issues',                       'Pending'),
+('BK00000022', 21250.00, '2025-01-03 10:00:00', 'Health reasons',                    'Refunded'),
+('BK00000029', 13500.00, '2025-01-20 09:30:00', 'Work conflict',                     'Pending'),
+('BK00000016',     0.00, '2025-01-05 12:00:00', 'No reason provided',                'Not Eligible'),
+('BK00000019',  5700.00, '2024-12-28 11:00:00', 'Accommodation not as advertised',   'Refunded'),
+('BK00000025',  5250.00, '2025-01-12 14:00:00', 'Flight cancellation',               'Refunded');
+
+-- ==============================
+-- CONTRACT DETAILS (15 records)
+-- ==============================
+INSERT INTO Contract_Details(Property_ID, Commission_Per_Booking, Fixed_Monthly_Rent, Commission_Amount, Start_Date, End_Date) VALUES
+( 1, 12.00, NULL,    8640.00, '2024-01-01', '2025-12-31'),
+( 2, 10.00, NULL,    1750.00, '2024-03-01', '2025-03-01'),
+( 3, 10.00, NULL,    3500.00, '2024-06-01', '2025-06-01'),
+( 4,  8.00, NULL,    3200.00, '2024-01-15', '2026-01-15'),
+( 5, 12.00, NULL,    3240.00, '2024-02-01', '2025-02-01'),
+( 6, NULL,  5000.00, NULL,    '2024-05-01', '2025-05-01'),
+( 7, 10.00, NULL,    4500.00, '2024-04-01', '2025-04-01'),
+( 8, 12.00, NULL,    7200.00, '2024-01-01', '2026-01-01'),
+( 9, 15.00, NULL,   13500.00, '2024-07-01', '2025-07-01'),
+(10, 10.00, NULL,    1800.00, '2024-09-01', '2025-09-01'),
+(11, 10.00, NULL,    4400.00, '2024-06-01', '2025-06-01'),
+(12,  8.00, NULL,    3520.00, '2024-03-15', '2025-03-15'),
+(13, 12.00, NULL,    5520.00, '2024-05-01', '2026-05-01'),
+(14, 10.00, NULL,    4200.00, '2024-08-01', '2025-08-01'),
+(15, 12.00, NULL,    9360.00, '2024-02-15', '2025-12-15');

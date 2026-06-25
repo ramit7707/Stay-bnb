@@ -1,0 +1,214 @@
+1. Super_Host _Status
+SELECT Host_ID, Name FROM Host WHERE Super_Host_Status = True;
+
+2. Hosts who can speak a particular language :
+
+SELECT DISTINCT h.Host_ID,h.Name FROM Host AS h
+INNER JOIN Host_Languages AS hl
+ON hl.Host_ID = h.Host_ID
+WHERE 'Hindi' = ANY (hl.Languages_Spoken)
+OR 'Gujarati' = ANY (hl. Languages_Spoken);
+
+
+3. Listing Count for each host:
+
+SELECT h.Host_ID,count (p.Property_ID) AS Listing_Count FROM Host AS h
+INNER JOIN Property AS p
+ON h.Host_ID = p.Host_ID
+WHERE p.availability_status <> 'OutsofContract'
+GROUP BY h.Host_ID
+ORDER BY Listing_Count DESC Limit 15;
+
+4. Top 3 Rated Hosts :
+SELECT Host_ID,Name,Avg_Rating FROM Host
+ORDER BY Avg_Rating DESC
+LIMIT 3;
+
+5.Monthly contract charges for each host :
+SELECT h.Host_ID,sum(c.Fixed_Monthly_Rent) AS Monthly_Fixed_Charges'
+FROM Host AS h INNER JOIN Property AS p
+ON h.Host_ID = p.Host_ID
+INNER JOIN Contract_Details AS c
+ON p.Property_ID = c.Property_ID
+WHERE c.Start_Date <= CURRENT_DATE AND c.End_Date > CURRENT_DATE
+GROUP BY h.Host_ID
+Order By Host_ID ASC;
+
+
+6.Revenue for host in a particular month :
+
+WITH earnings AS (
+SELECT h.Host_ID, SUM(inv.Amount) AS BookingsEarnings
+FROM Host AS h
+INNER JOIN Property AS p ON p.Host_ID = h.Host_ID
+INNER JOIN Bookings AS b ON b.Property_ID = p.Property_ID
+INNER JOIN Booking_Invoice AS inv ON b.Booking_ID = inv.Booking_ID
+GROUP BY h.Host_ID
+) ,
+
+refund AS (
+SELECT h.Host_ID, SUM (can.Refund_amount) AS Cancellation_Refund
+FROM Host AS h
+INNER JOIN Property AS p ON p.Host_ID = h.Host_ID
+INNER JOIN Bookings AS b ON b.Property_ID = p.Property_ID
+INNER JOIN Booking_Invoice AS inv ON b.Booking_ID = inv.Booking_ID
+INNER JOIN Booking_Cancellation AS can ON inv.Invoice_ID = can.Invoice_ID
+WHERE can.Refund_Status = 'Approved'
+GROUP BY h.Host_ID
+)
+
+SELECT e.Host_ID, e.BookingsEarnings - COALESCE (r.Cancellation_Refund, 0) AS Net_Earnings
+FROM earnings AS e
+LEFT JOIN refund AS r ON e.Host_ID = r.Host_ID;
+
+
+7.Commision given by a host in a given period :
+
+SELECT h.Host_ID, ROUND (sum (cd.Commision_Per_Booking*inv.Amount)/100,2)
+AS "BookingEarning' FROM Host AS h
+INNER JOIN Property AS p ON p.Host_ID = h.Host_ID
+INNER JOIN Bookings AS b ON b.Property_ID = p.Property_ID
+INNER JOIN Booking_Invoice AS inv ON b.Booking_ID = inv.Booking_ID
+INNER JOIN Contract_Details AS cd ON cd.Property_ID = p.Property_ID
+WHERE b.Booking_Date BETWEEN '2022-06-01' AND '2023-12-31'
+GROUP BY h.Host_ID
+
+
+8. Top3 Rated Property category wise at least 10 ratings:
+
+WITH RatedProperty AS (
+SELECT p.Property_ID, p.Title, p.Category_ID, p.Avg_Rating,
+COUNT (r.Property_ID) AS num_ratings
+FROM Property as p LEFT JOIN Ratings as r
+ON p.Property_ID = r.Property_ID
+GROUP BY p.Property_ID, p.Title, p.Category_ID, p.Avg_Rating
+HAVING COUNT(r.Property_ID) >= 2)
+SELECT rp.Title, pc. Category_Name, rp.Avg_Rating
+FROM RatedProperty rp
+JOIN Property_Category pc ON rp.Category_ID = pc.Category_ID
+WHERE rp.Avg_Rating IS NOT NULL ORDER BY pc.Category_Name, rp.Avg_Rating DESC LIMIT 3;
+
+
+9. Minimum Required Capacity of Guests :
+SELECT p.Property_ID,p.Title,p.Accomodation_Limit
+FROM Property р
+WHERE p.Accomodation_Limit >= 5;
+
+
+10. Minimum Required number rooms and bathrooms :
+SELECT Property_ID, Title FROM Property p
+WHERE p.No_of_rooms >= 4 AND p.No_of_bathrooms >= 3;
+
+
+11. Upper/Lower limit to price :
+SELECT property_ID, Title,price_per_night FROM Property
+WHERE price_per_night BETWEEN 8000 AND 12000;
+
+
+12. Category wise listings :
+
+SELECT pc.Category_ID, pc.Category_Name, COUNT (p.Property_ID)
+FROM Property_Category AS pc
+INNER JOIN Property AS p ON pc.Category_ID = p.Category_ID
+GROUP BY pc.Category_ID, pc.Category_Name
+Order By Category_ID ASC;
+
+
+13. Category wise booking stats :
+
+SELECT pc.Category_ID, pc.Category_Name, COUNT (b.Booking_ID)
+FROM Property_Category AS pc
+INNER JOIN Property AS p ON pc.Category_ID = p.Category_ID
+INNER JOIN Bookings AS b ON p.Property_ID = b.Property_ID
+GROUP BY pc.Category_ID, pc.Category_Name
+Order By Category_ID;
+
+14. Property where smoking/pet is allowed :
+SELECT Property_ID, Title
+FROM Property
+WHERE Pet_Permit = TRUE AND smoking_permit = TRUE;
+
+
+15. Property hosted by a Super-host
+SELECT p.Property_ID, p.Title
+FROM Property AS p
+INNER JOIN Host AS h ON h.Host_ID = p.Host_ID
+WHERE h.Super_Host_Status = TRUE;
+
+16. Property which are available right now
+SELECT Property_ID, Title,AVg_Rating FROM Property
+WHERE Availability_Status = 'Available'
+
+
+17. Preferred Property
+SET Search_Path to airbnb;
+SELECT pa.property_id, p.Title AS "PropertyName"
+FROM Property_Amenities AS pa
+INNER JOIN Property AS p ON p. property_id = pa.property_id
+WHERE pa. Amenity_Name IN (SELECT Pref_Aminities FROM Preferences WHERE User_ID = USR0000001');
+
+
+18. Commission percent and fixed monthly rent for a
+property in contract
+SELECT p.Property_ID, cd. Commision_Per_Booking, cd. Fixed_Monthly_Rent
+FROM Property AS p
+INNER JOIN Contract_Details AS cd ON p.Property_ID = cd.Property_ID
+WHERE p.Availability_Status <> 'OutofContract'
+AND CURRENT_DATE BETWEEN cd. Start_Date AND cd.End_Date;
+
+
+19. Property with most Wishlist:
+SELECT w.property_id,p. title,count (w.user_id) AS "Wishlist Properties"
+FROM wishlist AS w
+INNER JOIN property AS p ON p.property_id = w. property_id
+GROUP BY w.property_id,p. title
+ORDER BY "Wishlist Properties" DESC;
+
+
+20. Month-wise bookings :
+
+SELECT EXTRACT (Month FROM Booking_Date) AS "Booking Month",
+count (Booking_ID) AS "Number of Bookings" FROM Bookings
+GROUP BY "Booking Month"
+ORDER BY "Booking Month" ASC;
+
+
+21. Property by Location(Only particular area) :
+SELECT Title, price_per_night FROM Property
+WHERE city = 'Bangalore';
+
+22. Property By Location(Nearby Areas) :
+With pin AS (
+SELECT pincode FROM Property WHERE city = 'Bangalore')
+SELECT p.Title, p.city, p.price_per_night FROM Property AS p CROSS JOIN pin|
+where ABS (pin.pincode - p.pincode) BETWEEN 0 AND 15000
+
+23.User wise booking stats :
+SELECT u.User_ID, COUNT (b.Booking_ID) AS "Number of Bookings",
+SUM (inv.Amount) AS "Total Spendings"
+FROM Users AS u
+INNER JOIN Bookings AS b ON b.User_ID = u.User_ID
+INNER JOIN Booking_Invoice AS inv ON b.Booking_ID = inv.Booking_ID
+WHERE inv.Invoice_ID NOT IN (SELECT Invoice_ID FROM Booking_Cancellation)
+GROUP BY u.User_ID
+ORDER BY "Total Spendings" DESC;
+
+
+24. Most available Amenity :
+SELECT pa.Amenity_Name, COUNT (p .Property_ID)
+AS "Amenity Availability in Property"
+FROM Property_Amenities AS pa
+INNER JOIN Property AS p ON pa.Property_ID = p.Property_ID
+GROUP BY pa.Amenity_Name
+ORDER BY "Amenity Availability in Property" DESC;
+
+
+25. Month-wise bookings :
+SELECT EXTRACT (Month FROM Booking_Date) AS "Booking Month",
+count (Booking_ID) AS "Number of Bookings" FROM Bookings
+GROUP BY "Booking Month"
+ORDER BY "Booking Month" ASC;
+
+26. City Wise Property Counts :
+SELECT City, Count (Property_ID) FROM Property
+Group By City;
